@@ -49,75 +49,30 @@ html, body {
   height: 100vh;
   background: linear-gradient(180deg, rgb(61, 255, 61), #efefef);
 }
-  /*
-  background: linear-gradient(100deg, rgb(41, 255, 41), 
-                                      rgb(180, 255, 180), 
-                                      rgb(41, 255, 41));
-  background-size: 400% 500%;
-  -webkit-animation: Animation 9s ease infinite;
-  -moz-animation: Animation 9s ease infinite;
-  animation: Animation 9s ease infinite;
-}
-
-@-webkit-keyframes Animation {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Animation {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Animation {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-*/
 
 #welcome-section h1 {
   padding:0;
   margin:0;
   color:rgb(5, 5, 65);
+  width:100%;
 }
 
 #welcome-section p {
   padding:0;
   margin:0;
+  width:100%;
 }
 
 .wrapper {
   overflow: hidden;
-  
 }
 
 .text-background {
     height:20em;
     width:20em;
     background-color: #fff;
-    background: url();
-    border:1px solid black;
+    background: url('https://raw.githubusercontent.com/EbrahemLuhar/portfolio-fcc/master/images/leaves.png') repeat-x;
+    border:1px solid rgb(5, 5, 65);
     border-radius:50%;
     position:relative;
     text-align:center;
@@ -126,10 +81,37 @@ html, body {
     align-items: center;
     flex-direction: column;
     z-index: 1;
+    background-repeat: repeat-x;
+    animation: slider 20s linear infinite;
+    -webkit-animation: slider 20s linear infinite;
+    -moz-animation: slider 20s linear infinite;
+    -o-animation: slider 20s linear infinite;
+}
+
+@keyframes slider {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+@-webkit-keyframes slider {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+@-moz-keyframes slider {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+@-o-keyframes slider {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
 }
 
 #projects {
-  padding: 5px;
+  padding-top:50px;
+  margin-top:-50px;
+  padding-bottom: 100px;
 }
 
 h2 {
@@ -146,9 +128,21 @@ h2 {
 
 .project-tile {
   display: flex;
-  border: 2px solid rgb(226, 226, 69);
+  border: 3px solid rgb(226, 226, 69);
   border-radius: 5px;
   text-align: center;
+  font-size: 1.2em;
+}
+
+.project-tile img {
+  min-width:245px;
+}
+
+.project-tile:hover {
+  box-shadow: 0px 0px 16px 1px rgb(5, 5, 65);
+  -webkit-box-shadow: 0px 0px 16px 1px rgb(5, 5, 65);
+  -moz-box-shadow: 0px 0px 16px 1px rgb(5, 5, 65);
+  transition: 200ms;
 }
 
 .project-tile a {
@@ -164,7 +158,9 @@ img {
 
 #contact {
   background-color: rgb(226, 226, 69);
-  padding: 5px
+  padding-top: 35px;
+  margin-top: -35px;
+  padding-bottom:1px;
 }
 
 form {
@@ -182,32 +178,281 @@ form {
   display: flex;
   flex-direction: column;
   width:49%;
+  padding:0 0 1.5em 0;
 }
 
 .textarea {
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
+  padding: 0 0 1.5em 0;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+form label {
+  padding: 0 0 0.5em 0.2em;
+  font-size: 1.2em;
+  color: rgb(5, 5, 65);
+}
+
+input[type=text], input[type=email] {
+  padding: 0.5em 0;
+  border-radius: 5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  font-size: 1em;
+  color: rgb(15, 15, 178);
+}
+
+input[type=submit] {
+  background-color: rgb(41, 255, 41);
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgb(11, 205, 11);
+  border: 1px solid rgb(131, 196, 26);
+  border-radius: 5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  -moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+   margin-bottom:1.5em;
+   font-size: 1.1em;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(11, 255, 11);
+}
+
+input[type=submit]:active {
+  position: relative;
+  top:1px;
+}
+
+textarea {
+  padding: 0.2em 0;
+  height: 10em;
+  border-radius: 5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  color: rgb(15, 15, 178);
+}
+
+.icons {
+  width:70%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+}
+
+.icons a {
+  color: rgb(5, 5, 65);
+  transition: all 150ms ease-in;
+  transform: scale(1);
+  -webkit-transition: all 150ms ease-in;
+  -webkit-transform: scale(1);
+  -moz-transition: all 150ms ease-in;
+  -moz-transform: scale(1);
+}
+
+.icons a:hover {
+  transition: all 150ms ease-in;
+  transform: scale(1.5);
+  -webkit-transition: all 150ms ease-in;
+  -webkit-transform: scale(1.2);
+  -moz-transition: all 150ms ease-in;
+  -moz-transform: scale(1.2);
 }
 
 footer {
   background-color: rgb(5, 5, 65);
-  padding:5px;
+  padding:0;
+  margin: 0;
   color:#fff; 
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-footer ul {
-  list-style: none;
-  padding:0;
+.bottom-nav {
+  padding:0; 
+  margin: 0;
+  display: block;
+  width: 30%;
+  text-align: right;
 }
 
-footer li {
-  display: inline-block;
+.bottom-nav a:hover {
+  color: rgb(61, 255, 61);
+}
+
+footer p {
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+
+.footer-icons {
+  display: block;
+  width: 30%;
+  margin-left: 0.3em;
+  font-size: 1.1em;
 }
 
 footer a {
   color: #fff;
   text-decoration: none;
+  margin-right: 0.3em;
+}
+
+footer a:hover {
+  color: rgb(61, 255, 61);
+}
+
+@media (min-width:768px) and (max-width: 992px) {
+  #navbar ul {
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #navbar ul {
+    text-align: center;
+  }
+
+  .text-background {
+    height:16.5em;
+    width:16.5em;
+  }
+  
+  .first-row, .second-row {
+    display: block;
+    margin:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:251px;
+  }
+  
+  .project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom:1em;
+  }
+  
+  footer .bottom-nav a {
+    display:block;
+  }
+  
+  form {
+    width: 85%;
+  }
+  
+  .icons {
+    font-size: 3em;
+    width: 85%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #navbar {
+  position:relative;
+  height:auto;
+  background-color:rgb(11, 255, 11);
+  margin: 0;
+  padding: 0;
+}
+  
+  #navbar ul {
+    padding:0;
+    margin:0;
+    text-align:center;
+  }
+  
+  #navbar li {
+    display:block;
+    padding: 0.5em 0;
+    border-bottom:1px solid rgb(5, 5, 65);
+  }
+
+  #navbar a {
+    border: none;
+  }
+  
+  #navbar a:hover {
+    border-bottom: none;
+    transition: 0;
+  }
+
+  .text-background {
+    height:16.5em;
+    width:16.5em;
+  }
+  
+  #projects {
+    padding-top:1px;
+    margin-top:-1px;
+    padding-bottom: 65px;
+  }
+  
+  .first-row, .second-row {
+    display: block;
+    margin:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:251px;
+  }
+  
+  .project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom:1em;
+  }
+  
+  #contact {
+    padding-top: 20px;
+    margin-top: -20px;
+    padding-bottom:1px;
+  }
+  
+  form {
+    width: 85%;
+  }
+  
+  .name-email {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .name, .email {
+    width:100%;
+  }
+  
+  form label {
+  padding: 0 0 0.2em 0.1em;
+  }
+  
+  .icons {
+  font-size: 2.5em;
+  width: 85%;
+  }
+  
+}
+
+@media (max-height: 440px) {
+  .text-background {
+    height:5em;
+    width:18em;
+    border-radius:5px;
+    margin-top:20%;
 }
